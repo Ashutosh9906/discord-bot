@@ -19,9 +19,9 @@ client.on("messageCreate", async (message) => {
         if (message.author.bot) return;
         if (message.content.startsWith("create")) {
             const url = message.content.split("create")[1];
-            console.log(message.content);
-            console.log(url);
+            //console.log(message);
             await URL.create({
+                username: message.author.username,
                 redirectUrl: url,
             })
             return message.reply({
